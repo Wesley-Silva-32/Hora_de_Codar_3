@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Notas do Aluno</title>
+</head>
+
+<body>
+
+    <h1>Cálculo de Média de 6 Notas</h1>
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <p id="resultado"></p> <!-- Onde será exibida a média calculada -->
+
+
+    <script>
+
+        function calcularMedia() {
+            let soma = 0; // Variável para armazenar a soma das notas
+            let nota; // Variável para armazenar cada nota individualmente
+
+            // Laço para solicitar 6 notas válidas
+            for (let i = 1; i <= 6; i++) {
+                // Solicita ao usuário uma nota
+                do {
+                    nota = parseFloat(prompt("Informe a nota " + i + " (entre 0 e 10):"));
+                    // Verifica se a nota está dentro do intervalo válido (0 a 10)
+                    if (nota < 0 || nota > 10 || isNaN(nota)) {
+                        alert("Nota inválida! Digite um valor entre 0 e 10.");
+                    }
+                } while (nota < 0 || nota > 10 || isNaN(nota)); // Repete enquanto a nota for inválida
+
+                // Adiciona a nota válida à soma total
+                soma += nota;
+            }
+
+            // Calcula a média simples
+            let media = soma / 6;
+
+            // Exibe a média final arredondada para duas casas decimais
+            document.getElementById("resultado").innerHTML = "A média do aluno é: " + media.toFixed(2);
+        }
+
+    </script>
+
+    <!--Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a média (simples) desse aluno. 
+    Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota. São 6 notas ao total. Caso o valor informado 
+    para qualquer uma das notas esteja fora do limite estabelecido, deve ser solicitado um novo valor ao usuário. -->
+
+</body>
+
+</html>

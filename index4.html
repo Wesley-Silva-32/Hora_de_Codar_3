@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+
+<body>
+
+
+    <h1>Cálculo da Média Aritmética:</h1>
+    <p id="media"></p> <!-- Onde será exibida a média calculada -->
+
+    <script>
+
+        let soma = 0; // Variável para armazenar a soma dos números
+        let quantidade = 0; // Variável para contar quantos números existem
+
+        // Laço for para percorrer os números de 15 a 100
+        for (let i = 15; i <= 100; i++) {
+            soma += i; // Adiciona o valor de i à soma
+            quantidade++; // Incrementa o contador de números
+        }
+
+        // Calcula a média aritmética
+        let media = soma / quantidade;
+
+        // Exibe a média no elemento com id 'media'
+        document.getElementById("media").innerHTML = "A média aritmética é: " + media.toFixed(2);
+
+        //Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).
+
+    </script>
+
+</body>
+
+</html>

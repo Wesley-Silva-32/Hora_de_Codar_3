@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomba Relógio</title>
+
+</head>
+<body>
+    
+    <h1 id="contador">30</h1> <!-- O valor inicial de 30 aparece antes da contagem iniciar -->
+
+    
+<script>
+       
+        // Definindo o tempo inicial
+        let tempo = 30;
+
+        // Função que faz a contagem regressiva
+        const contagemRegressiva = setInterval(function() {
+            // Atualizando o conteúdo do elemento HTML com o valor atual da contagem
+            document.getElementById("contador").innerHTML = tempo;
+
+            // Verificando se o tempo chegou a 0
+            if (tempo === 0) {
+                // Paramos o intervalo para encerrar a contagem
+                clearInterval(contagemRegressiva);
+                // Substituímos o valor da contagem por "EXPLOSÃO"
+                document.getElementById("contador").innerHTML = "EXPLOSÃO";
+            }
+
+            // Decrementamos o tempo
+            tempo--;
+        }, 1000); // 1000 milissegundos = 1 segundo
+
+    </script>
+    
+
+</body>
+</html>

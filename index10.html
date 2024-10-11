@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abuada de 1 a N</title>
+</head>
+
+<body>
+
+    <h1>Tabuadas de 1 a N</h1>
+
+    <button onclick="imprimirTabuadas()">Imprimir Tabuadas</button>
+
+    <p id="resultado"></p> <!-- Onde serão exibidas as tabuadas -->
+
+    <script>
+
+function imprimirTabuadas() {
+            let N = parseInt(prompt("Informe um valor inteiro N:")); // Solicita o valor de N ao usuário
+            let resultado = ""; // Variável para armazenar as tabuadas
+
+            // Valida se N é um número inteiro e maior que 0
+            if (isNaN(N) || N <= 0) {
+                alert("Por favor, informe um número inteiro maior que 0.");
+                return; // Encerra a função se o valor não for válido
+            }
+
+            // Laço para gerar as tabuadas de 1 a N
+            for (let i = 1; i <= N; i++) {
+                resultado += `<h2>Tabuada de ${i}:</h2>`; // Adiciona o título da tabuada
+                for (let j = 1; j <= 10; j++) {
+                    resultado += `${i} x ${j} = ${i * j}<br>`; // Adiciona a linha da tabuada
+                }
+                resultado += "<br>"; // Adiciona uma quebra de linha entre as tabuadas
+            }
+
+            // Exibe as tabuadas no parágrafo
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+        
+    </script>
+
+    <!--Escreva um programa para imprimir todas as tabuadas de 1 a N. N será informado pelo usuário.-->
+
+</body>
+
+</html>

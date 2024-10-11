@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Lê o primeiro valor
+        let primeiroValor = parseFloat(prompt("Informe o primeiro valor:"));
+
+        // Inicializa o segundo valor
+        let segundoValor;
+
+        // Lê o segundo valor e verifica se é válido
+        do {
+            segundoValor = parseFloat(prompt("Informe o segundo valor (deve ser maior que ZERO):"));
+            if (segundoValor <= 0) {
+                alert("Valor inválido! O segundo valor deve ser maior que ZERO.");
+            }
+        } while (segundoValor <= 0);
+
+        // Realiza a divisão
+        let resultado = primeiroValor / segundoValor;
+
+        // Exibe o resultado
+        console.log(`O resultado da divisão de ${primeiroValor} por ${segundoValor} é: ${resultado}`);
+
+        /*Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor 
+        informado for igual ou menor que ZERO, deve ser lido um novo valor. Ou seja, para o segundo
+        valor não pode ser aceito o valor zero, nem um valor negativo. 
+        
+        O seu programa deve imprimir o resultado da divisão do primeiro valor 
+        lido pelo segundo valor e exibir o resultado ao usuário.*/
+
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

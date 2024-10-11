@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores de 1 até N</title>
+</head>
+
+<body>
+
+    <h1>Impressão de Valores entre 1 e N</h1>
+
+    <button onclick="imprimirValores()">Imprimir Valores</button>
+
+
+    <p id="resultado"></p>
+
+    <script>
+
+        function imprimirValores() {
+            // Solicita o valor de N ao usuário
+            let N = parseInt(prompt("Informe um valor inteiro maior que 0:"));
+
+            // Verifica se N é maior que 0
+            if (N > 0) {
+                let resultado = ""; // Variável para armazenar a sequência de números
+
+                // Laço for para percorrer os valores de 1 até N
+                for (let i = 1; i <= N; i++) {
+                    resultado += i + " "; // Adiciona o valor de i à string resultado
+                }
+
+                // Exibe a sequência de números no parágrafo
+                document.getElementById("resultado").innerHTML = "Valores de 1 a " + N + ": " + resultado;
+            } else {
+                // Se o valor de N for inválido (menor ou igual a 0), exibe uma mensagem de erro
+                alert("Valor inválido! Informe um número maior que 0.");
+            }
+        }
+
+    </script>
+
+    <!--Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). 
+    Considere que o N será sempre maior que ZERO. N  é um valor informado pelo usuário-->
+</body>
+
+</html>

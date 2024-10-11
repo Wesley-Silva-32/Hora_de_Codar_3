@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Cálculo da Média Aritmética</h1>
+
+
+
+    <p>Informe dois números inteiros:</p>
+
+
+    <!-- Entrada dos números -->
+
+
+    <label for="num1">Primeiro número (menor): </label>
+
+    <input type="number" id="num1"><br><br>
+
+
+    <label for="num2">Segundo número (maior): </label>
+    <input type="number" id="num2"><br><br>
+
+
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+
+    <p id="resultado"></p> <!-- Onde o resultado será exibido -->
+
+    <script>
+
+        function calcularMedia() {
+            // Obtendo os valores informados pelo usuário
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+
+            // Variáveis para armazenar a soma dos números e a quantidade
+            let soma = 0;
+            let quantidade = 0;
+
+            // Laço for para percorrer os números de num1 até num2
+            for (let i = num1; i <= num2; i++) {
+                soma += i; // Soma o valor atual de i
+                quantidade++; // Incrementa o contador de números
+            }
+
+            // Calcula a média aritmética
+            let media = soma / quantidade;
+
+            // Exibe o resultado na página
+            document.getElementById("resultado").innerHTML =
+                "A média aritmética entre " + num1 + " e " + num2 + " é: " + media.toFixed(2);
+        }
+
+    </script>
+
+    <!--Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros 
+informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro 
+sempre será menor que o segundo.-->
+
+</body>
+
+</html>

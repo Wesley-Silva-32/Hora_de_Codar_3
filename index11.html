@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Valores</title>
+</head>
+
+<body>
+
+    <h1>Contagem de Valores entre 24 e 42</h1>
+
+    <button onclick="contarValores()">Contar Valores</button>
+
+    <p id="resultado"></p> <!-- Onde será exibido o resultado -->
+
+    <script>
+
+function contarValores() {
+            let dentroIntervalo = 0; // Contador para valores dentro do intervalo
+            let foraIntervalo = 0;   // Contador para valores fora do intervalo
+
+            // Laço para ler 10 valores do usuário
+            for (let i = 1; i <= 10; i++) {
+                let valor = parseFloat(prompt("Informe o valor " + i + ":")); // Solicita um valor ao usuário
+
+                // Verifica se o valor está entre 24 e 42 (inclusive)
+                if (valor >= 24 && valor <= 42) {
+                    dentroIntervalo++; // Incrementa o contador para valores dentro do intervalo
+                } else {
+                    foraIntervalo++;    // Incrementa o contador para valores fora do intervalo
+                }
+            }
+
+            // Exibe o resultado no parágrafo
+            document.getElementById("resultado").innerHTML = 
+                `Quantidade de valores entre 24 e 42: ${dentroIntervalo}<br>` +
+                `Quantidade de valores fora do intervalo: ${foraIntervalo}`;
+        }
+        
+    </script>
+
+</body>
+
+</html>

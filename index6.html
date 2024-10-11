@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Alunos</title>
+</head>
+
+<body>
+
+    <h1>Calculadora de Média Final</h1>
+
+
+    <label for="nota1">Nota 1: </label>
+
+
+    <input type="number" id="nota1" step="0.1"><br><br>
+
+    <label for="nota2">Nota 2: </label>
+    <input type="number" id="nota2" step="0.1"><br><br>
+
+
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <p id="resultado"></p> <!-- Onde o resultado da média será exibido -->
+
+
+    <p id="aprovados"></p> <!-- Onde o total de alunos aprovados será exibido -->
+
+    <script>
+
+        let aprovados = 0; // Variável para contar o número de alunos aprovados
+
+        function calcularMedia() {
+            // Obtendo as notas
+            let nota1 = parseFloat(document.getElementById("nota1").value);
+            let nota2 = parseFloat(document.getElementById("nota2").value);
+
+            // Calculando a média
+            let media = (nota1 + nota2) / 2;
+
+            // Exibe a média e verifica aprovação
+            let resultadoTexto = "A média final é: " + media.toFixed(2) + ". ";
+            if (media >= 9.5) {
+                resultadoTexto += "Aluno aprovado!";
+                aprovados++; // Incrementa o número de alunos aprovados
+            } else {
+                resultadoTexto += "Aluno reprovado.";
+            }
+
+            document.getElementById("resultado").innerHTML = resultadoTexto;
+
+            // Pergunta se deseja calcular a média de outro aluno
+            let resposta = prompt("Calcular a média de outro aluno? Sim/Não").toLowerCase();
+
+            // Se a resposta for "sim", reinicia a entrada de notas
+            if (resposta === "sim" || resposta === "s") {
+                document.getElementById("nota1").value = "";
+                document.getElementById("nota2").value = "";
+            } else {
+                // Exibe a quantidade de alunos aprovados e encerra o programa
+                document.getElementById("aprovados").innerHTML = "Total de alunos aprovados: " + aprovados;
+                document.getElementById("nota1").disabled = true;
+                document.getElementById("nota2").disabled = true;
+                document.getElementsByTagName("button")[0].disabled = true; // Desativa o botão
+            }
+        }
+        
+    </script>
+
+    <!--Escreva um programa para ler 2 notas de um aluno, calcule e imprima 
+    a média final. Considere que a nota de aprovação é 9,5. Logo após escrever 
+    a mensagem "Calcular a média de outro aluno Sim/Não?" e peço uma resposta. 
+    Se a resposta for "S", o programa deve ser executado novamente, caso contrário, 
+    deve ser encerrado exibindo a quantidade de alunos aprovados.-->
+</body>
+
+</html>
